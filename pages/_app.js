@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
     <Head>
       <title>Next App</title>
       <meta name="description" content="todo list and posts app" />
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <NavBar/>
     <div style={{display:"grid",gridTemplateColumns:"auto 75vw",gridTemplateRows:"auto auto"}}>

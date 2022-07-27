@@ -117,9 +117,7 @@ export default function Comments({comments}){
 }
 
 export async function getStaticProps(){
-    let res = await fetch("http://localhost:3000/api/comments",{
-        method:"GET",
-    });
+    let res = await fetch("http://localhost:3000/api/comments");
     let comments = await res.json();
     return({
         props:{
