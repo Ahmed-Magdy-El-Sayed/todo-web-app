@@ -6,6 +6,9 @@ export default function handler(req, res) {
         comments.push(JSON.parse(req.body));
         res.status(200).json()
     }
+    else if(req.method === "GET"){
+        res.status(200).json(comments);
+    }
     else if(req.method === "DELETE"){
         let index = comments.findIndex(c => c.id === JSON.parse(req.body))
         comments.splice(index,1);
@@ -16,7 +19,5 @@ export default function handler(req, res) {
         let index = comments.findIndex(c => c.id === id)
         comments.splice(index,1,JSON.parse(req.body));
         res.status(200).json()
-    }else{
-        res.status(200).json(comments);
     }
 }

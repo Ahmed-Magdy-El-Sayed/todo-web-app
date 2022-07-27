@@ -117,7 +117,9 @@ export default function Comments({comments}){
 }
 
 export async function getServerSideProps(){
-    let res = await fetch("http://localhost:3000/api/comments");
+    let res = await fetch("https://next-app-one-ashy.vercel.app/api/comments",{
+        method:"GET",
+    });
     let comments = await res.json();
     return({
         props:{
