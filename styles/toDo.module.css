@@ -1,0 +1,35 @@
+.toDo ol{
+    padding: 0;
+    
+}
+
+.toDo ol li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin: 5px 10px;
+    font-size: 20px;
+    border: 1px solid;
+}
+
+.toDo button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+.toDo form{
+    margin-top: 50px;
+}
+
+.toDo form input{
+    max-width: 500px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border-style: solid;
+    font-size: 20px;
+}
