@@ -29,11 +29,12 @@ export default function Comments({comments}){
         if(title === '' || body === ''){
             alert("fill title and body fields before press post")
         }else{
-            (async () =>{console.log(url)
-                await fetch(url ,{
+            (async () =>{
+                let err= await fetch(url ,{
                     method:"POST",
                     body:JSON.stringify({id,title,body}) ,
                 })
+                if(err) console.log(err)
             })();
             window.location.reload();
         }
@@ -43,10 +44,11 @@ export default function Comments({comments}){
         let id = parseInt(e.target.parentElement.dataset.id) ;
         if(confirm("do yo sure you want to delete post ?")){
             (async () =>{
-                await fetch(url ,{
+                let err = await fetch(url ,{
                     method:"DELETE",
                     body:JSON.stringify(id) ,
                 })
+                if(err) console.log(err)
             })();
             window.location.reload();
         }
@@ -74,10 +76,11 @@ export default function Comments({comments}){
             alert("fill title and body fields before press edit")
         }else{
             (async () =>{
-                await fetch(url ,{
+                let err = await fetch(url ,{
                     method:"PATCH",
                     body:JSON.stringify({id,title,body}) ,
                 })
+                if(err) console.log(err)
             })();
             window.location.reload();
         }
