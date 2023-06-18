@@ -12,7 +12,7 @@ export default function handler(req, res) {
             path.join(__dirname,"..","..","..","data","comments.js"),
             "export let comments = "+ JSON.stringify(comments),
             err=>{err?
-                res.status(500).json()
+                res.status(500).json(err)
                 : res.status(200).json()
             }
         );
@@ -27,7 +27,7 @@ export default function handler(req, res) {
             path.join(__dirname,"..","..","..","data","comments.js"),
             "export let comments = "+ JSON.stringify(comments),
             err=>{err?
-                res.status(500).json()
+                res.status(500).json(err)
                 : res.status(200).json()
             }
         );
@@ -40,7 +40,7 @@ export default function handler(req, res) {
             path.join(__dirname,"..","..","..","data","comments.js"),
             "export let comments = "+ JSON.stringify(comments),
             err=>{err?
-                res.status(500).json()
+                res.status(500).json(err)
                 : res.status(200).json()
             }
         );
