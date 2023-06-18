@@ -1,10 +1,10 @@
 import {comments} from "../../../data/comments";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from 'url';
-import fs from "fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-console.log(__dirname)
+
 export default function handler(req, res) {
     if(req.method === "POST"){
         comments.push(JSON.parse(req.body));
