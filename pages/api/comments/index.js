@@ -10,9 +10,12 @@ export default function handler(req, res) {
         comments.push(JSON.parse(req.body));
         fs.writeFile(
             path.join(__dirname,"..","..","..","data","comments.js"),
-            "export let comments = "+ JSON.stringify(comments)
+            "export let comments = "+ JSON.stringify(comments),
+            err=>{err?
+                res.status(500).json()
+                : res.status(200).json()
+            }
         );
-        res.status(200).json()
     }
     else if(req.method === "GET"){
         res.status(200).json(comments);
@@ -22,9 +25,12 @@ export default function handler(req, res) {
         comments.splice(index,1);
         fs.writeFile(
             path.join(__dirname,"..","..","..","data","comments.js"),
-            "export let comments = "+ JSON.stringify(comments)
+            "export let comments = "+ JSON.stringify(comments),
+            err=>{err?
+                res.status(500).json()
+                : res.status(200).json()
+            }
         );
-        res.status(200).json()
     }
     else if(req.method === "PATCH"){
         let id = JSON.parse(req.body).id;
@@ -32,8 +38,11 @@ export default function handler(req, res) {
         comments.splice(index,1,JSON.parse(req.body));
         fs.writeFile(
             path.join(__dirname,"..","..","..","data","comments.js"),
-            "export let comments = "+ JSON.stringify(comments)
+            "export let comments = "+ JSON.stringify(comments),
+            err=>{err?
+                res.status(500).json()
+                : res.status(200).json()
+            }
         );
-        res.status(200).json()
     }
 }
