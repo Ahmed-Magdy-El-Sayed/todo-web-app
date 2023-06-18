@@ -1,6 +1,7 @@
 import {comments} from "../../../data/comments";
-import path from "path"
+import path from "path";
 import { fileURLToPath } from 'url';
+import fs from "fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 console.log(__dirname)
